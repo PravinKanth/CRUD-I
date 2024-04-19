@@ -1,0 +1,43 @@
+.login{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    .out{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4rem;
+        padding:10rem 1rem ;
+        border: 0.2px solid rgb(60, 71, 89);
+        border-radius: 20px;
+        box-shadow: 3px 0px #888888, -3px 0px #888888;
+
+    .title{
+        font-size: 3.6rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+
+    }
+
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+ 
+    padding: 2rem 3rem;
+  
+  }
+
+
+  .example-full-width {
+    width: 100%;
+    margin-bottom: 3rem;
+        
+  }
+
+}
+}

@@ -1,0 +1,65 @@
+<!-- <mat-dialog-content>
+    <p>What's your favorite animal?</p>
+    <mat-form-field>
+      <mat-label>Favorite Animal</mat-label>
+      <input matInput [(ngModel)]="data.animal">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  </mat-dialog-actions> -->
+
+  <div class="emp-title" mat-dialog-title>Employee details</div>
+
+
+  <form>
+    <div mat-dialog-content>
+      <div class="overlay">
+      <div class="row1">
+        <mat-form-field class="input" appearance="outline">
+          <mat-label>ID</mat-label>
+          <input type="text" matInput [formControl]="idFormControl">
+        </mat-form-field>
+
+        <mat-form-field class="input" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput [formControl]="nameFormControl">
+        </mat-form-field>
+
+        <mat-form-field class="input" appearance="outline">
+          <mat-label>Department</mat-label>
+          <input type="text" matInput [formControl]="departmentFormControl">
+        </mat-form-field>
+
+</div>
+
+  <div class="row2">
+      <mat-form-field class="input"  appearance="outline">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput [formControl]="addressFormControl">
+      </mat-form-field>
+  </div>
+
+  <div class="row3">
+
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>City</mat-label>
+        <input type="text" matInput [formControl]="cityFormControl">
+      </mat-form-field>
+
+      <mat-form-field  class="input" appearance="outline">
+        <mat-label>State</mat-label>
+        <input type="text" matInput [formControl]="stateFormControl">
+      </mat-form-field>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="row4" mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()">Close</button>
+    <button mat-raised-button (click)="onSubmit()" color="primary">Submit</button>
+  </div>
+</form>

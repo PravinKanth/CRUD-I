@@ -1,0 +1,29 @@
+.outer-table{
+    margin: 10rem 10rem;
+
+    .span-l{
+        display: flex;
+        justify-content: end;
+    .button{
+        padding: 1rem 2rem;
+        background-color: rgb(45, 139, 238);
+        margin-bottom: 5rem;
+        display: inline-block;
+        color: white;
+        cursor: pointer;
+        transform: all 0.2s ease-out;
+        border-radius: 5px;
+        
+    }
+
+
+    .button:hover{
+        background-color: rgb(0, 123, 255);
+    }
+    }
+    .table{
+
+    
+    }
+}
+

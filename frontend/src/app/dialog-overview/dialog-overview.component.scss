@@ -1,0 +1,57 @@
+.emp-title{
+    margin-left: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2.6rem;
+}
+
+.overlay{
+    display: flex;
+    margin: 3rem 4rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .row1{
+        display: flex;
+        gap: 3rem;
+        .input:nth-child(1){
+            width: 14rem;
+        }
+
+        .input:nth-child(2){
+            width:28rem;
+        }
+
+        .input:nth-child(3){
+            width:25rem;
+        }
+
+    }
+
+    .row2{
+        .input{
+            width: 73rem;
+        }
+
+    }
+
+    .row3{
+        display: flex;
+        gap: 3rem;
+        .input{
+            width: 35rem;
+        }
+
+    }
+
+}
+
+.row4{
+    margin-right: 5.5rem;
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
