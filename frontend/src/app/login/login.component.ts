@@ -8,6 +8,7 @@ import {
 
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
+import { ToastContainerDirective, ToastrModule, ToastrService } from 'ngx-toastr';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -24,7 +25,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent {
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private toaster:ToastrService){}
   
   hide = true;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -36,7 +37,9 @@ export class LoginComponent {
   onSubmit(){
     if(this.emailFormControl.invalid || this.passwordFormControl.invalid){
       console.log("Invalid!!");
-
+      this.toaster.error("Invalid Credentials!")
+      this.emailFormControl.setValue("")
+      this.passwordFormControl.setValue("")
     }
 
     else{
