@@ -30,20 +30,16 @@ export interface PeriodicElement {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements AfterViewInit, OnInit{
+export class HomeComponent implements OnInit, AfterViewInit {
   isNoData:boolean=true
   formData$:Observable<any[]>
   
   displayedColumns: string[] = ["id",'name', 'department', 'address', 'city', 'state', 'action'];
 
-  dataSource: MatTableDataSource<PeriodicElement>;
+  dataSource: MatTableDataSource<PeriodicElement>=new MatTableDataSource<PeriodicElement>([]);
 
   constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog, private formDataService:FormDataService, private store: Store<AppState>,) {
-    this.dataSource = new MatTableDataSource<PeriodicElement>([]);
-    this.store.dispatch(getFormData())
     this.formData$=this.store.select(selectSubmissionList)
-
-    
   }
 
   ngOnInit(): void {
@@ -58,8 +54,27 @@ export class HomeComponent implements AfterViewInit, OnInit{
       }
 
       this.dataSource.data=data
+  
     })
+
+    this.store.dispatch(getFormData())
     
+  }
+
+  @ViewChild(MatSort) sort!: MatSort;
+  
+  ngAfterViewInit(): void {
+    this.sorting();
+  }
+
+  sorting(): void {
+    if (this.sort) {
+      console.log("saf")
+      this.dataSource.sort = this.sort;
+    }
+    else {
+      setTimeout(() => this.sorting(), 100);
+    }
   }
 
   openDialog(): void {
@@ -71,12 +86,6 @@ export class HomeComponent implements AfterViewInit, OnInit{
     this.store.dispatch(deleteFormData({deleteData:id}))
   }
 
-
-  @ViewChild(MatSort) sort!: MatSort;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-  }
 
   announceSortChange(sortState: Sort) {
 

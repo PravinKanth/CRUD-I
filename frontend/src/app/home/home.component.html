@@ -4,7 +4,7 @@
 <span mat-raised-button (click)="openDialog()" class="button">Add Employee</span>
 </div>
 
-<div class="table">
+<div *ngIf="!isNoData" class="table">
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
        class="mat-elevation-z8">
 
@@ -68,6 +68,8 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 </div>
-<div *ngIf="isNoData">No Data Found!</div>
+<div class="no-data-wrapper" *ngIf="isNoData">
+  <img class="no-data" src="../../assets/no-data.jpg">
+</div>
 </div>
 

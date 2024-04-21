@@ -1,6 +1,16 @@
 .outer-table{
     margin: 10rem 10rem;
 
+    .no-data-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .no-data{
+            // margin-top: 3rem;
+            width: 40%;
+        }
+    }
+
     .span-l{
         display: flex;
         justify-content: end;
