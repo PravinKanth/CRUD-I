@@ -6,6 +6,16 @@ export const submitFormData = createAction(
     props<{formData: myFormData}>()
 );
 
-export const submitFormDataSuccess = createAction('[Form] Submit Form Data Success');
+export const submitFormDataSuccess = createAction('[Form] Submit Form Data Success',
+ props<{list:any}>()
+);
 
-export const submitFormDataFailure = createAction('[Form] Submit Form Data Failure', props<{ error: any }>());
+export const submitFormDataFailure = createAction('[Form] Submit Form Data Failure',
+ props<{ error: any }>()
+);
+
+export const getFormData = createAction("[GetForm] Get Form Data")
+
+export const deleteFormData = createAction(
+    "[DeleteFormData] Delete Form Data",
+    props<{deleteData:string}>());

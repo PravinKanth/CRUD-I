@@ -30,9 +30,10 @@ import {
 } from '@angular/material/dialog';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 import { StoreModule } from '@ngrx/store';
-import { formReducer } from './states/submission/submission.reducer';
+import { submissionListReducer } from './states/submission/submission.reducer';
 import { FormEffects } from './states/submission/submission.effects';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogClose,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), StoreModule.forRoot({form:formReducer}, {}),
+    ToastrModule.forRoot(), StoreModule.forRoot({form:submissionListReducer}, {}),
     EffectsModule.forRoot([FormEffects]),
     HttpClientModule
   ],

@@ -6,21 +6,20 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FormDataService {
+  base_url= "http://localhost:3000"
 
   constructor(private http: HttpClient) { }
+  
 
-  submitFormData(formData: FormData): Observable<any> {
-    // return this.http.post<any>('/api/submitFormData', formData);
-    console.log("hey");
-    console.log(formData);
-    return this.http.post<any>('http://localhost:3000/postdata', formData);
+  submitFormData(formData: FormData){
+    return this.http.post<any>(`${this.base_url}/postdata`, formData);
   }
 
-  getFormData(): Observable<any> {
-    return this.http.get<any>('http://localhost:3000/getdata');
+  getFormData(){
+    return this.http.get<any>(`${this.base_url}/getdata`);
   }
 
-  postDelete(id:string):Observable<any>{
-    return this.http.post<any>('http://localhost:3000/postdelete',{id:id});
+  postDelete(id:string){
+    return this.http.post<any>(`${this.base_url}/postdelete`,{id:id});
   }
 }

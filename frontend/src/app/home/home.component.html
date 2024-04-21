@@ -13,14 +13,14 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">
       ID
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.id | uppercase}}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
       Name
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
   </ng-container>
 
 
@@ -28,7 +28,7 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by department">
       Department
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.department | uppercase}} </td>
   </ng-container>
 
 
@@ -36,21 +36,21 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by address">
       Address
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.address | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="city">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by city">
       City
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.city | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="state">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by state">
       State
     </th>
-    <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.state | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="action">
@@ -68,5 +68,6 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 </div>
+<div *ngIf="isNoData">No Data Found!</div>
 </div>
 

@@ -6,7 +6,6 @@ import {
   MatDialogRef,
 
 } from '@angular/material/dialog';
-import { DialogData } from '../home/home.component';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { submitFormData } from '../states/submission/submission.action';
@@ -25,7 +24,6 @@ export class DialogOverviewComponent {
   constructor(
     private toaster : ToastrService,
     public dialogRef: MatDialogRef<DialogOverviewComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private store: Store<AppState>
   
   ) {}
@@ -68,13 +66,6 @@ export class DialogOverviewComponent {
 
       this.store.dispatch(submitFormData({formData:this.formData}))
       console.log(this.formData);
-
-      // this.formData.id="";
-      // this.formData.name = "";
-      // this.formData.department = "";
-      // this.formData.address = "";
-      // this.formData.city = "";
-      // this.formData.state = "";
 
       this.dialogRef.close("submit");
     }

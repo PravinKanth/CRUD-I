@@ -113,6 +113,16 @@ app.post("/postdata",upload.none(), async (req, res)=>{
       insertDepartments(req.body.id, req.body.department)
   ]);
 
+
+  const data = await db("Employees")
+  .select("Employees.id", "Employees.name", "Departments.department", "Addresses.address", "Addresses.city", "Addresses.state")
+  .leftJoin("Addresses", "Employees.id", "Addresses.id")
+  .leftJoin("Departments", "Employees.id", "Departments.id");
+
+  // console.log(data);
+
+  res.status(200).json(data)
+
   }
 
   catch(error){ 
@@ -124,8 +134,6 @@ app.post("/postdata",upload.none(), async (req, res)=>{
 
 app.get("/getdata",async (req,res)=>{
   try{
-
-  
   const data = await db("Employees")
   .select("Employees.id", "Employees.name", "Departments.department", "Addresses.address", "Addresses.city", "Addresses.state")
   .leftJoin("Addresses", "Employees.id", "Addresses.id")
