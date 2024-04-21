@@ -37,9 +37,9 @@ export class LoginComponent {
   onSubmit(){
     if(this.emailFormControl.invalid || this.passwordFormControl.invalid){
       console.log("Invalid!!");
-      this.toaster.error("Invalid Credentials!")
-      this.emailFormControl.setValue("")
-      this.passwordFormControl.setValue("")
+      this.toaster.error("Invalid")
+      // this.emailFormControl.setValue("")
+      // this.passwordFormControl.setValue("")
     }
 
     else{
@@ -49,6 +49,10 @@ export class LoginComponent {
       if(this.emailFormControl.value === "test@gmail.com" && this.passwordFormControl.value==="password"){
         this.router.navigate(["/home"]);
         
+      }
+
+      else{
+        this.toaster.error("Invalid Credentials!")
       }
     }
 

@@ -1,8 +1,33 @@
+.wrap{
+  background-image: url("../../assets/bg1.jpg");
+  background-size: cover;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
 .login{
-        height: 90vh;
+    
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        width: 80%;
+        background-color: white;
+        padding: 10rem;
+        border-radius: 2rem;
+        border-top-left-radius: 20rem;
+        border-bottom-left-radius: 20rem;
+        clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 93%);
+        // padding-left: 10rem;
+
+        .bg-class{
+        .bg{
+          width: 60rem;
+        }
+      }
+
 
     .out{
         display: flex;
@@ -11,9 +36,10 @@
         flex-direction: column;
         gap: 4rem;
         padding:10rem 1rem ;
-        border: 0.2px solid rgb(60, 71, 89);
+        border: 0.1px solid rgb(202, 205, 211);
         border-radius: 20px;
-        box-shadow: 3px 0px #888888, -3px 0px #888888;
+        // box-shadow: 3px 0px #888888, -3px 0px #888888;
+        background-color: white;
 
     .title{
         font-size: 3.6rem;
@@ -39,5 +65,6 @@
         
   }
 
+}
 }
 }
