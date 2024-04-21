@@ -16,14 +16,18 @@
 
     .button{
         padding: 1rem 2rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        letter-spacing: 0.7px;
         background-color: white;  
-        transition: all 0.1s ease-out;
+        transition: all 0.05s ease-out;
         cursor: pointer;
         border-radius: 5px;
     }
 
     .button:hover{
-        background-color: rgb(205, 205, 205);
+        background-color: rgb(233, 107, 107);
+        color: white;
     }
 
     

@@ -169,6 +169,15 @@ app.post("/postdelete", async (req, res)=>{
 })
 
 
+app.get("/",(req, res)=>{
+  res.send({
+    Message:"Vanakkam Bruhh!",
+    Status:"200 OK!",
+
+  })
+});
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
