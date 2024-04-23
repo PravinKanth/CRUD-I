@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
+
 import {
   MAT_DIALOG_DATA,
   MatDialogRef,
@@ -37,9 +38,9 @@ export class DialogOverviewComponent {
     state: ''
   }
 
-  idFormControl = new FormControl("", [Validators.required]);
-  nameFormControl = new FormControl("", [Validators.required])
-  departmentFormControl = new FormControl("", [Validators.required])
+  idFormControl = new FormControl("", [Validators.required, Validators.pattern("(NSP|nsp)-[0-9]+")]);
+  nameFormControl = new FormControl("", [Validators.required, Validators.pattern("[a-zA-Z ]*")])
+  departmentFormControl = new FormControl("", [Validators.required, Validators.pattern("(HR|Support|Engineer|hr|support|engineer)")])
   addressFormControl = new FormControl("", [Validators.required])
   cityFormControl = new FormControl("", [Validators.required])
   stateFormControl = new FormControl("", [Validators.required])

@@ -22,15 +22,15 @@ export class FormEffects{
             formDataObject.append('address', formData.address);
             formDataObject.append('city', formData.city);
             formDataObject.append('state', formData.state);
-            console.log("dei")
-            return this.formService.submitFormData(formDataObject).pipe(
+            // console.log("dei")
+            return this.formService.submitFormData(formDataObject).pipe( 
                     map((data) => { 
-                        console.log("hi");
+                        // console.log("hi");
                         return(
                              FormActions.submitFormDataSuccess({list:data}))}
                             ),
                     catchError(error => {
-                        console.log("bye")
+                        // console.log("bye")
                         return(of(FormActions.submitFormDataFailure({ error })))
                 })
                 );

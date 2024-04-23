@@ -1,7 +1,12 @@
 <app-header></app-header>
 <div class="outer-table">
+
   <div class="span-l">
-<span mat-raised-button (click)="openDialog()" class="button">Add Employee</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" >
+    </mat-form-field>
+    <span mat-raised-button (click)="openDialog()" class="button">Add Employee</span>
 </div>
 
 <div *ngIf="!isNoData" class="table">

@@ -68,6 +68,13 @@ db.schema.createTable("Departments", (table)=>{
 
 }
 
+
+
+
+
+
+
+
 // INSERT INTO EMPLOYEES
 
 async function insertEmployees(id, name){

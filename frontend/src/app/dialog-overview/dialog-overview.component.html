@@ -8,16 +8,19 @@
         <mat-form-field class="input" appearance="outline">
           <mat-label>ID</mat-label>
           <input type="text" matInput [formControl]="idFormControl">
+          <mat-error *ngIf="idFormControl.hasError('pattern')">Eg. NSP-61</mat-error>
         </mat-form-field>
 
         <mat-form-field class="input" appearance="outline">
           <mat-label>Name</mat-label>
           <input type="text" matInput [formControl]="nameFormControl">
+          <mat-error *ngIf="nameFormControl.hasError('pattern')">Name can only contain letters</mat-error>
         </mat-form-field>
 
         <mat-form-field class="input" appearance="outline">
           <mat-label>Department</mat-label>
           <input type="text" matInput [formControl]="departmentFormControl">
+          <mat-error *ngIf="departmentFormControl.hasError('pattern')">Departments can be only of HR, Support or Engineer</mat-error>
         </mat-form-field>
 
 </div>
