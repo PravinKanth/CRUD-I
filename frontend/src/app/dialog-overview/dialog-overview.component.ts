@@ -11,6 +11,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { submitFormData } from '../states/submission/submission.action';
 import { AppState } from '../states/app.state';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -25,9 +26,13 @@ export class DialogOverviewComponent {
   constructor(
     private toaster : ToastrService,
     public dialogRef: MatDialogRef<DialogOverviewComponent>,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    @Inject(MAT_DIALOG_DATA) public data: myFormData
   
-  ) {}
+  ) {
+this.formData= data? data: this.formData;
+
+  }
 
   formData: myFormData = {
     id: '',
@@ -36,6 +41,10 @@ export class DialogOverviewComponent {
     address: '',
     city: '',
     state: ''
+  }
+
+  getDataById(data: myFormData){
+
   }
 
   idFormControl = new FormControl("", [Validators.required, Validators.pattern("(NSP|nsp)-[0-9]+")]);

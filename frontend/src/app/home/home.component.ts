@@ -86,6 +86,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.store.dispatch(deleteFormData({deleteData:id}))
   }
 
+  edit(id:string,  name: string, department: string, address: string, city: string, state: string):void{
+    this.dialog.open(DialogOverviewComponent, {
+      data:{id:id, name:name, department:department, address:address, city:city, state:state}
+    })
+  }
+
 
   announceSortChange(sortState: Sort) {
 

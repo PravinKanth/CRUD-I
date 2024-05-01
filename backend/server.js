@@ -79,7 +79,17 @@ db.schema.createTable("Departments", (table)=>{
 
 async function insertEmployees(id, name){
   try{
-    await db("Employees").insert({id:id, name:name}).onConflict("id").ignore();
+
+    const existingEmployee = await db("Employees").where({ id }).first();
+
+    if (existingEmployee) {
+      await db("Employees").where({ id }).update({name});
+    }
+    else{
+      await db("Employees").insert({ id, name });
+
+    }
+
   }
 
   catch (error){
@@ -91,7 +101,16 @@ async function insertEmployees(id, name){
 
 async function insertAddresses(id, address,city, state){
   try{
-    await db("Addresses").insert({id:id, address:address, city:city, state:state}).onConflict("id").ignore();
+    const existingEmployee = await db("Addresses").where({ id }).first();
+
+    if (existingEmployee) {
+      await db("Addresses").where({ id }).update({address,city, state});
+    }
+    else{
+      await db("Addresses").insert({id:id, address:address, city:city, state:state})
+    }
+
+
   }
 
   catch (error){
@@ -103,7 +122,15 @@ async function insertAddresses(id, address,city, state){
 
 async function insertDepartments(id, department){
   try{
-    await db("Departments").insert({id:id, department:department}).onConflict("id").ignore();
+    const existingEmployee = await db("Departments").where({ id }).first();
+
+    if (existingEmployee) {
+      await db("Departments").where({ id }).update({department});
+    }
+    else{
+      await db("Departments").insert({id:id, department:department})
+    }
+
   }
 
   catch (error){
