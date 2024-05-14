@@ -1,0 +1,27 @@
+{
+    "login": {
+      "title": "Bienvenu",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "loginButton": "Connexion",
+      "validmail":"S'il vous plaît, mettez une adresse email valide",
+      "mail":"Veuillez entrer votre adresse e-mail",
+      "validpass":"Veuillez saisir un mot de passe valide (longueur minimale de 8 caractères)",
+      "pass":"s'il vous plait entrez votre mot de passe"
+    },
+    "header":{
+        "logout":"Se déconnecter",
+        "title":"APPLICATION CRUD"
+    },
+    "home":{
+        "search":"Recherche",
+        "addEmployee":"Ajouter un employé",
+        "id":"IDENTIFIANT",
+        "name":"Nom",
+        "department":"Département",
+        "address":"Adresse",
+        "city":"Ville",
+        "state":"État",
+        "actions":"Actions"
+    }
+  }

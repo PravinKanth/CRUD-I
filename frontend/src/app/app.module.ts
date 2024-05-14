@@ -30,10 +30,15 @@ import {
 } from '@angular/material/dialog';
 import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 import { StoreModule } from '@ngrx/store';
-import { submissionListReducer } from './states/submission/submission.reducer';
+import { languageReducer, submissionListReducer } from './states/submission/submission.reducer';
 import { FormEffects } from './states/submission/submission.effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -53,9 +58,16 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogClose,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), StoreModule.forRoot({form:submissionListReducer}, {}),
+    ToastrModule.forRoot(), StoreModule.forRoot({form:submissionListReducer, language:languageReducer}, {}),
     EffectsModule.forRoot([FormEffects]),
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideAnimationsAsync(),

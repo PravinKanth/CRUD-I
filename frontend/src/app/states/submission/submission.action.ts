@@ -19,3 +19,11 @@ export const getFormData = createAction("[GetForm] Get Form Data")
 export const deleteFormData = createAction(
     "[DeleteFormData] Delete Form Data",
     props<{deleteData:string}>());
+
+// Localization bruh
+
+export const switchLanguage = createAction(
+    '[switchLanguage] Language Switch',
+    props<{lang:string}>()
+);
+

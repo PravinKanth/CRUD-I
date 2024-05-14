@@ -55,6 +55,28 @@
     width: 100%;
  
     padding: 2rem 3rem;
+
+    .languages{
+      padding-top: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      color: rgb(81, 81, 81);
+
+
+      span{
+        cursor: pointer;
+        transition:all 0.2s;
+        font-size: 1.25rem;
+        font-weight: 400;
+      }
+
+      span:hover{
+        color: rgb(255, 89, 0);
+      }
+
+    }
   
   }
 

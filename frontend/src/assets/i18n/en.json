@@ -1,0 +1,27 @@
+{
+    "login": {
+      "title": "Welcome",
+      "email": "Email",
+      "password": "Password",
+      "loginButton": "Login",
+      "validmail":"Please enter a valid email address",
+      "mail":"Please enter your email address",
+      "validpass":"Please enter a valid password (Minimum length of 8 Characters)",
+      "pass":"Please enter your password"
+    },
+    "header":{
+        "logout":"Logout",
+        "title":"CRUD APP"
+    },
+    "home":{
+        "search":"Search",
+        "addEmployee":"Add Employee",
+        "id":"ID",
+        "name":"Name",
+        "department":"Department",
+        "address":"Address",
+        "city":"City",
+        "state":"State",
+        "actions":"Actions"
+    }
+  }

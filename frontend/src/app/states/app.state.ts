@@ -4,6 +4,7 @@ import {  submissionList, submissionListReducer } from "./submission/submission.
 
 export interface AppState{
     form:submissionList;
+    language: string
 }
 
 // export const reducers: ActionReducerMap<AppState> = {

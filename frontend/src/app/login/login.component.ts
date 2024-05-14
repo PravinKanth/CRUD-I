@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import {
   FormControl,
   FormGroupDirective,
@@ -9,6 +10,9 @@ import {
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 import { ToastContainerDirective, ToastrModule, ToastrService } from 'ngx-toastr';
+import { Store } from '@ngrx/store';
+import { AppState } from '../states/app.state';
+import { switchLanguage } from '../states/submission/submission.action';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,7 +29,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent {
 
-  constructor(private router: Router, private toaster:ToastrService){}
+  constructor(private router: Router, private toaster:ToastrService, private translate: TranslateService, private store: Store<AppState>){}
+
+  switchLanguage(language: string) {
+    this.store.dispatch(switchLanguage({lang:language}))
+  }
   
   hide = true;
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);

@@ -4,26 +4,27 @@
       <img class="bg" src="../../assets/6343825.jpg"/>
     </div>
     <div class="out">
-    <h1 class="title">Welcome!</h1>
+    <!-- <h1 class="title">Welcome!</h1> -->
+    <h1 class="title">{{'login.title' | translate}}</h1>
 
 <form class="example-form">
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Email</mat-label>
+      <mat-label>{{'login.email' | translate}}</mat-label>
       <input type="email" matInput [formControl]="emailFormControl">
       <!-- <mat-hint>Your EmailID is valid!</mat-hint> -->
       @if (emailFormControl.hasError('email')) {
-        <mat-error>Please enter a valid email address</mat-error>
+        <mat-error>{{'login.validmail' | translate}}</mat-error>
       } 
 
       @if (emailFormControl.hasError('required')) {
-        <mat-error>Please enter your email address</mat-error>
+        <mat-error>{{'login.mail' | translate}}</mat-error>
       } 
 
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Enter your password</mat-label>
+        <mat-label>{{'login.password' | translate}}</mat-label>
         <input matInput [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'">
 
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -31,15 +32,24 @@
         </button>
 
         @if (passwordFormControl.hasError("minlength") ){
-            <mat-error>Please enter a valid password (Minimum length of 8 Characters)</mat-error>
+            <mat-error>{{'login.validpass' | translate}}</mat-error>
         }
     
         @if (passwordFormControl.hasError('required')){
-            <mat-error>Please enter your password</mat-error>
+            <mat-error>{{'login.pass' | translate}}</mat-error>
         }
 
       </mat-form-field>
-      <button (click)="onSubmit()" style="width: 100%; height:5rem" mat-flat-button color="warn">Login</button>
+      <button (click)="onSubmit()" style="width: 100%; height:5rem" mat-flat-button color="warn">{{'login.loginButton' | translate}}</button>
+
+      <div class="languages">
+        <span (click)="switchLanguage('fr')">French</span>
+        <span (click)="switchLanguage('en')">English</span>
+        <span (click)="switchLanguage('ta')">Tamil</span>
+        <span (click)="switchLanguage('te')">Telugu</span>
+        <span (click)="switchLanguage('hi')">Hindi</span>
+        <span (click)="switchLanguage('kn')">Kannada</span>
+      </div>
 
 
     

@@ -3,10 +3,10 @@
 
   <div class="span-l">
     <mat-form-field appearance="outline">
-      <mat-label>Search</mat-label>
+      <mat-label>{{'home.search' | translate}}</mat-label>
       <input matInput (keyup)="applyFilter($event)" >
     </mat-form-field>
-    <span mat-raised-button (click)="openDialog()" class="button">Add Employee</span>
+    <span mat-raised-button (click)="openDialog()" class="button">{{'home.addEmployee' | translate}}</span>
 </div>
 
 <div *ngIf="!isNoData" class="table">
@@ -16,14 +16,14 @@
 
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">
-      ID
+      {{'home.id' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.id | uppercase}}</td>
   </ng-container>
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
-      Name
+      {{'home.name' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.name | uppercase}} </td>
   </ng-container>
@@ -31,7 +31,7 @@
 
   <ng-container matColumnDef="department">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by department">
-      Department
+      {{'home.department' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.department | uppercase}} </td>
   </ng-container>
@@ -39,28 +39,28 @@
 
   <ng-container matColumnDef="address">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by address">
-      Address
+      {{'home.address' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.address | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="city">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by city">
-      City
+      {{'home.city' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.city | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="state">
     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by state">
-      State
+      {{'home.state' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> {{element.state | uppercase}} </td>
   </ng-container>
 
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>
-      Action
+      {{'home.actions' | translate}}
     </th>
     <td mat-cell *matCellDef="let element"> 
       <button (click)="edit(element.id, element.name, element.department, element.address, element.city, element.state)" mat-icon-button color="blue">
